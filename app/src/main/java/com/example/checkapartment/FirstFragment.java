@@ -17,6 +17,7 @@ import com.google.android.material.internal.FlowLayout;
 
 public class FirstFragment extends Fragment implements DetopAdapter.Check {
 
+
     private FragmentFirstBinding binding;
 
     private RecyclerView mRecycle;
@@ -46,10 +47,10 @@ public class FirstFragment extends Fragment implements DetopAdapter.Check {
     public void passElement(Apartment apartment) {
 
         Bundle bundle = new Bundle();
-        bundle.putString("Nombre del edificio", apartment.getBuildingName());
-        bundle.putString("Numero de departamento", apartment.getUnitId());
-        bundle.putString("Dirección del departamento", apartment.getAddress());
-        bundle.putString("url de imagen del edificio", apartment.getUrlImageBuilding());
+        bundle.putString("Nombre", apartment.getBuildingName());
+        bundle.putString("Numero", apartment.getUnitId());
+        bundle.putString("Dirección", apartment.getAddress());
+        bundle.putString("url", apartment.getUrlImageBuilding());
         Navigation.findNavController(binding.getRoot()).navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
     }
 }

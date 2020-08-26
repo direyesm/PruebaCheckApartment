@@ -35,8 +35,8 @@ public class DetopAdapter extends RecyclerView.Adapter<DetopAdapter.ApartViewHol
     public void onBindViewHolder(@NonNull ApartViewHolder holder, int position) {
         Apartment apartment = apartmentList.get(position);
         holder.txtname.setText(apartment.getBuildingName());
-        holder.txtnumero.setText(apartment.getUnitId());
-        holder.txtdirecc.setText(apartment.getAddress());
+        holder.txtnum.setText(apartment.getUnitId());
+        holder.txtdirec.setText(apartment.getAddress());
         Glide.with(holder.image_depto.getContext()).load(apartment.getUrlImageBuilding()).into(holder.image_depto);
     }
 
@@ -50,16 +50,17 @@ public class DetopAdapter extends RecyclerView.Adapter<DetopAdapter.ApartViewHol
 
        private ImageView image_depto;
        private TextView txtname;
-       private TextView txtnumero;
-       private TextView txtdirecc;
+       private TextView txtnum;
+       protected TextView txtdirec;
+
 
 
        public ApartViewHolder(@NonNull DeptoListDataBinding binding) {
            super(binding.getRoot());
            image_depto = binding.imageDepto;
            txtname = binding.txtname;
-           txtnumero = binding.txtnumero;
-           txtdirecc = binding.txtdirecc;
+           txtnum = binding.txtnum;
+           txtdirec = binding.txtdirec;
            itemView.setOnClickListener(this);
 
        }

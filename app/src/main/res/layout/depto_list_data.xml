@@ -18,14 +18,15 @@
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/txtnumero"
+        android:id="@+id/txtdirec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/txtdirecc"
+        android:id="@+id/txtnum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
+
 </LinearLayout>
