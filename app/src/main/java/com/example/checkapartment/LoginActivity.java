@@ -27,16 +27,26 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Password(binding.editextpass.getText().toString());
-                Toast.makeText(LoginActivity.this, "llevas " +cont+ " intentos, a la 4ta vez se bloquea", Toast.LENGTH_LONG).show();
 
             }
         });
     }
 
     public void Password(String pass) {
-        if (pass.equals("123Pass") && cont < 4)
+        if (pass.equals("123Pass")){
             next();
+        }else {
             cont++;
+            Toast.makeText(LoginActivity.this, "llevas " +cont+ " intentos, a la 4ta vez se bloquea", Toast.LENGTH_LONG).show();
+            //binding.button.setEnabled(false);
+        }if (cont >= 4){
+            binding.button.setEnabled(false);
+            Toast.makeText(this, "Boton Bloqueado", Toast.LENGTH_LONG).show();
+        }else {
+            binding.button.setEnabled(true);
+        }
+
+
     }
     public void next(){
             Intent intent = new Intent(this, MainActivity.class);
