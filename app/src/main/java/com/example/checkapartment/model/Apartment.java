@@ -1,4 +1,4 @@
-package com.example.checkapartment;
+package com.example.checkapartment.model;
 
 public class Apartment {
 

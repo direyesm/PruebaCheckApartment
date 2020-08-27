@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.checkapartment.databinding.DeptoListDataBinding;
+import com.example.checkapartment.model.Apartment;
 
 import java.util.List;
 

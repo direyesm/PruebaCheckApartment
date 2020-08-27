@@ -1,4 +1,6 @@
-package com.example.checkapartment;
+package com.example.checkapartment.model;
+
+import com.example.checkapartment.model.Apartment;
 
 import java.util.ArrayList;
 import java.util.List;

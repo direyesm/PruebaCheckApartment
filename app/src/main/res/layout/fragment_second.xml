@@ -60,59 +60,59 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_description" />
 
             <CheckBox
-                android:id="@+id/checkBox12"
+                android:id="@+id/checkBoxluz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:text="CheckBox"
+                android:text="@string/luces"
                 app:layout_constraintTop_toBottomOf="@+id/txtname"
                 tools:layout_editor_absoluteX="0dp" />
 
             <CheckBox
-                android:id="@+id/checkBox15"
+                android:id="@+id/checkBoxdormi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox14" />
+                android:text="@string/dormitorio"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxluz" />
 
             <CheckBox
-                android:id="@+id/checkBox13"
+                android:id="@+id/checkBoxcocina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox12" />
+                android:text="@string/cocina"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxdormi" />
 
             <CheckBox
-                android:id="@+id/checkBox14"
+                android:id="@+id/checkBoxbaño"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CheckBox"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox13" />
+                android:text="@string/baño"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxcocina" />
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox15">
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxbaño">
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/rbnormal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="@string/normal" />
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/rbregular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="@string/regular" />
 
                 <RadioButton
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/rbmalas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="@string/mala" />
             </RadioGroup>
 
             <TextView
@@ -126,22 +126,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnguardar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
                 android:layout_marginTop="32dp"
-                android:text="Button"
+                android:text="@string/guardar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/btnalerta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="48dp"
-                android:text="Button"
+                android:text="@string/alerta"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
         </androidx.constraintlayout.widget.ConstraintLayout>

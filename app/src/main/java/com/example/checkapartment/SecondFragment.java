@@ -50,4 +50,10 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
+
+    public void evaluateRest (String total){
+    if(binding.checkBoxcocina.isChecked() == true){
+
+    }
+    }
 }

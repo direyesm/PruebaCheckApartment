@@ -13,4 +13,20 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    
+    
+    
+    <string name="luces">Luces del apartamento</string>
+    <string name="baño">Elementos del baño</string>
+    <string name="cocina">Elementos de la cocina</string>
+    <string name="dormitorio">Elementos del dormitorio</string>
+    
+    
+    <string name="normal">Normal</string>
+    <string name="regular">Regular</string>
+    <string name="mala">Malas</string>
+    
+    
+    <string name="guardar">Guardar</string>
+    <string name="alerta">¡Enviar Alerta!</string>
 </resources>

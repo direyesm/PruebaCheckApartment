@@ -8,12 +8,13 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.checkapartment.databinding.FragmentFirstBinding;
-import com.google.android.material.internal.FlowLayout;
+import com.example.checkapartment.model.Apartment;
+import com.example.checkapartment.model.ApartmentData;
 
 public class FirstFragment extends Fragment implements DetopAdapter.Check {
 
@@ -32,7 +33,7 @@ public class FirstFragment extends Fragment implements DetopAdapter.Check {
 
         mRecycle = binding.rvDepto;
         detopAdapter = new DetopAdapter(ApartmentData.apartmentList(), this);
-        mRecycle.setLayoutManager(new GridLayoutManager(getContext(),2));
+        mRecycle.setLayoutManager(new LinearLayoutManager(getContext()));
         mRecycle.setAdapter(detopAdapter);
 
         return binding.getRoot();

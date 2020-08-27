@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.checkapartment.databinding.ActivityLoginBinding;
@@ -14,7 +15,6 @@ import com.example.checkapartment.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding binding;
-
     private int cont = 0;
 
     @Override
@@ -22,6 +22,28 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.editxtcorreo.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                EditText et = (EditText) view;
+                if(et.getText().toString().length() == 0 && b == Boolean.FALSE) {
+                    binding.editxtcorreo.setError("Ingrese Corrreo");
+                    Toast.makeText(LoginActivity.this, "Ingresa un correo", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        binding.editextpass.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                EditText et = (EditText) view;
+                if(et.getText().toString().length() == 0 && b == Boolean.FALSE) {
+                    binding.editextpass.setError("Ingrese Contraseña");
+                    Toast.makeText(LoginActivity.this, "Ingresa una contraseña", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         }if (cont >= 4){
             binding.button.setEnabled(false);
             Toast.makeText(this, "Boton Bloqueado", Toast.LENGTH_LONG).show();
-        }else {
-            binding.button.setEnabled(true);
         }
 
 
