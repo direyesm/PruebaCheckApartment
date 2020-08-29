@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Password(binding.editextpass.getText().toString());
-
             }
         });
     }

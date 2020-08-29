@@ -29,11 +29,11 @@
                 android:id="@+id/txtname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="68dp"
                 android:text="TextView"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.365"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_description" />
 
@@ -41,7 +41,7 @@
                 android:id="@+id/txtnum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="48dp"
                 android:text="TextView"
                 android:textSize="18sp"
@@ -52,8 +52,8 @@
                 android:id="@+id/txtdirec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="16dp"
                 android:text="TextView"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/checkBoxdormi" />
 
             <CheckBox
-                android:id="@+id/checkBoxbaño"
+                android:id="@+id/checkBoxbano"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/baño"
@@ -94,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                app:layout_constraintTop_toBottomOf="@+id/checkBoxbaño">
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxbano">
 
                 <RadioButton
                     android:id="@+id/rbnormal"
@@ -117,10 +117,11 @@
 
             <TextView
                 android:id="@+id/txtresult"
-                android:layout_width="315dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="64dp"
-                android:text="TextView"
+                android:layout_width="320dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
