@@ -1,11 +1,13 @@
 package com.example.checkapartment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,10 +58,24 @@ public class SecondFragment extends Fragment {
         binding.txtname.setText(name);
         binding.txtnum.setText(depart);
         binding.txtdirec.setText(address);
+        binding.btnalerta.setEnabled(false);
+        binding.btnguardar.setEnabled(false);
 
         binding.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(binding.checkBoxluz.isChecked()){
+                    result += LUCES;
+                }
+                if (binding.checkBoxcocina.isChecked()){
+                    result += COCINA;
+                }
+                if (binding.checkBoxbano.isChecked()){
+                    result += BANO;
+                }
+                if (binding.checkBoxdormi.isChecked()){
+                    result += DORMI;
+                }
                 if (binding.rbnormal.isChecked()) {
                     result = result * NORMAL;
                 }
@@ -69,25 +85,35 @@ public class SecondFragment extends Fragment {
                 if (binding.rbmalas.isChecked()) {
                     result = result * MALA;
                 }
+
+                binding.txtresult.setText(String.valueOf(result));
+                binding.btnguardar.setEnabled(true);
+
+                binding.btnguardar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                       // resultCheckBox();
+                        alerta();
+                    }
+                });
+
             }
         });
 
-
-        binding.btnguardar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultCheckBox();
-            }
-        });
+//        binding.btnguardar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                resultCheckBox();
+//                alerta();
+//            }
+//        });
 
         binding.btnalerta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                shareWithWhatsApp(view, "hola");
+                shareWithWhatsApp(view, " " + binding.txtname + "" + binding.txtnum );
             }
         });
-
-
         return binding.getRoot();
     }
 
@@ -97,26 +123,44 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public void resultCheckBox(){
-        if(binding.checkBoxluz.isChecked()){
-            result += LUCES;
-        }
-        if (binding.checkBoxcocina.isChecked()){
-            result += COCINA;
-        }
-        if (binding.checkBoxbano.isChecked()){
-            result += BANO;
-        }
-        if (binding.checkBoxdormi.isChecked()){
-            result += DORMI;
-        }
-        binding.txtresult.setText(String.valueOf(result));
-    }
+//    public void resultCheckBox(){
+//        if(binding.checkBoxluz.isChecked()){
+//            result += LUCES;
+//        }
+//        if (binding.checkBoxcocina.isChecked()){
+//            result += COCINA;
+//        }
+//        if (binding.checkBoxbano.isChecked()){
+//            result += BANO;
+//        }
+//        if (binding.checkBoxdormi.isChecked()){
+//            result += DORMI;
+//        }
+//        binding.txtresult.setText(String.valueOf(result));
+//    }
+
+//    public  void resultRb(){
+//        binding.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+//                if (binding.rbnormal.isChecked()) {
+//                    result = result * NORMAL;
+//                }
+//                if (binding.rbregular.isChecked()) {
+//                    result = result * REGULAR;
+//                }
+//                if (binding.rbmalas.isChecked()) {
+//                    result = result * MALA;
+//                }
+//                binding.txtresult.setText(String.valueOf(result));
+//            }
+//        });
+//    }
 
     public void shareWithWhatsApp(View v, String mensaje){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, " " + mensaje);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "El siguente departamento fue mal evaluado " + mensaje);
         sendIntent.setType("text/plain");
         //sendIntent.setPackage("com.whatsapp");
         startActivity(sendIntent);
@@ -124,19 +168,21 @@ public class SecondFragment extends Fragment {
 
 
 
-//    public void resultRadioButon(){
-//        if (binding.rbnormal.isChecked()){
-//            result += NORMAL;
-//        }
-//        if (binding.rbregular.isChecked()){
-//            result += REGULAR;
-//        }
-//        if (binding.rbmalas.isChecked()){
-//            result += MALA;
-//        }
-//        binding.txtresult.setText(String.valueOf(result));
-//
-//    }
+    public void alerta(){
+        if(result <= 130){
+            Toast.makeText(getContext(), "NO PASO PRUEBA", Toast.LENGTH_LONG).show();
+            binding.btnalerta.setEnabled(true);
+            binding.txtresult.setBackgroundColor(Color.WHITE);
+            binding.txtresult.setTextColor(Color.RED);
+        }else {
+            binding.btnalerta.setEnabled(false);
+            Toast.makeText(getContext(), "APROBADO", Toast.LENGTH_LONG).show();
+            binding.txtresult.setTextColor(Color.BLACK);
+        }
+
+    }
+
+
 
 
 
